@@ -11,7 +11,7 @@ const Toast = Swal.mixin({
     toast: true,
     position: 'top-end',
     showConfirmButton: false,
-    timer: 2000,
+    timer: 500,
     timerProgressBar: true,
     didOpen: (toast) => {
       toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -48,7 +48,7 @@ class App extends React.Component {
                 chirps: [...this.state.chirps, 
                     {username: "Simon", id: uuidv4(), chirp:"aha omg computers are cool", createdAt: "random time in the past"},
                     {username: "Luke", id: uuidv4(), chirp:"lol omg Y2K is coming!", createdAt: "12/31/1999"},
-                    {username: "Andrew", id: uuidv4(), chirp:" don't forget to berate your users!lmao", createdAt: Date.now() +" seconds ago"},  
+                    {username: "Andrew", id: uuidv4(), chirp:" don't forget to berate your users! lmao", createdAt: Date.now() +" seconds ago"},  
                 ]
             });
         
@@ -59,7 +59,32 @@ class App extends React.Component {
 
     
         // submitbutton handle
-        handleSubmit(e) {
+        handleSubmit = (e) => {
+
+            if (this.state.username ==='' || this.state.chirp==='' ) {
+
+                Toast.fire({
+                    icon: 'error',
+                    title: 'Chirp failed! '
+                })
+                
+                  
+                setTimeout(() => {   
+                  
+                    Swal.fire({
+                        title: `Did you forget? You need to write something 🙄 `,
+                        imageUrl: 'https://media0.giphy.com/media/SWoRKslHVtqEasqYCJ/giphy.gif',
+                        width: 600,
+                        padding: '3em',
+                        
+                      })
+                  
+                    },750);
+                  
+                  
+
+                return;
+            }
 
             e.preventDefault();
             const newChirp = {
@@ -72,15 +97,25 @@ class App extends React.Component {
 
                     });
 
-                    console.log(`username ${this.state.username}`);
-                    console.log(`chirp: ${this.state.chirp}`);
-                    console.log(this.state.chirps);
-                    console.log(this.state.createdAt);
+                    // console.log(`username ${this.state.username}`);
+                    // console.log(`chirp: ${this.state.chirp}`);
+                    // console.log(this.state.chirps);
+                    // console.log(this.state.createdAt);
 
 
                     Toast.fire({
                         icon: 'success',
                         title: 'Chirp successful! 🕊'
+                      })
+
+                      Swal.fire({
+                        html: `<p>Thank you <strong>${this.state.username}</strong>...<br> Your Chirp, <strong>"${this.state.chirp}"</strong>, was posted at ${this.state.createdAt} <br><br>
+                        
+                        🌎 The world thanks you for your contribution.🙏</p>`,
+                        imageUrl: 'https://media1.giphy.com/media/Tt9jctxaVjRny/giphy.gif',
+                        width: 600,
+                        padding: '3em',
+                        
                       })
 
         }
