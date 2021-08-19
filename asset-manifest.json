@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/ClassyChirper/static/js/main.a28a375d.chunk.js",
+    "main.js.map": "/ClassyChirper/static/js/main.a28a375d.chunk.js.map",
+    "runtime-main.js": "/ClassyChirper/static/js/runtime-main.2077bbb0.js",
+    "runtime-main.js.map": "/ClassyChirper/static/js/runtime-main.2077bbb0.js.map",
+    "static/css/2.818011ed.chunk.css": "/ClassyChirper/static/css/2.818011ed.chunk.css",
+    "static/js/2.c17c1e61.chunk.js": "/ClassyChirper/static/js/2.c17c1e61.chunk.js",
+    "static/js/2.c17c1e61.chunk.js.map": "/ClassyChirper/static/js/2.c17c1e61.chunk.js.map",
+    "index.html": "/ClassyChirper/index.html",
+    "static/css/2.818011ed.chunk.css.map": "/ClassyChirper/static/css/2.818011ed.chunk.css.map",
+    "static/js/2.c17c1e61.chunk.js.LICENSE.txt": "/ClassyChirper/static/js/2.c17c1e61.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2077bbb0.js",
+    "static/css/2.818011ed.chunk.css",
+    "static/js/2.c17c1e61.chunk.js",
+    "static/js/main.a28a375d.chunk.js"
+  ]
+}
